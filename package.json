@@ -1,0 +1,10 @@
+{
+  "name": "versionedinitializable-issue-poc",
+  "version": "0.0.1",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "truffle": "^5.1.43"
+  },
+  "dependencies": {}
+}
