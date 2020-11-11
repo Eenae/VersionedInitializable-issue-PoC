@@ -10,6 +10,8 @@ import './VersionedInitializable.sol';
  */
 contract ImplV1 is BaseV1, VersionedInitializable {
 
+    // Layout: _name, lastInitializedRevision, initializing
+
     function getRevision() internal override pure returns (uint256) {
         return 1;
     }

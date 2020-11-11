@@ -11,6 +11,10 @@ import 'truffle/Assert.sol';
  */
 contract ImplV2 is BaseV2, VersionedInitializable {
 
+    // Layout: _name, _someTimestamp, lastInitializedRevision, initializing
+    //                                ^
+    //                                uh-oh, it reads ImplV1.initializing now, which is false i.e. 0
+
     modifier checkPreviousRevision() {
         Assert.equal(lastInitializedRevision, 1, "lastInitializedRevision lookup failure");
         _;
