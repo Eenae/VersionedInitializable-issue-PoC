@@ -26,6 +26,28 @@ abstract contract VersionedInitializable {
    */
   bool private initializing;
 
+
+  /*
+   * Usage of these functions partially fixes the issue.
+   * `initializing` must also be explicitly positioned in storage.
+
+  bytes32 internal constant REVISION_SLOT = 0x65b769a96fc4e269d33b39d37bcfa033d056093ef6f788cd93f4a285afe27a99; // keccak256("VersionedInitializable.lastInitializedRevision")
+
+  function loadRevision() internal view returns (uint256 result) {
+    assembly {
+      result := sload(REVISION_SLOT)
+    }
+  }
+
+  function storeRevision(uint256 r) internal {
+    assembly {
+      sstore(REVISION_SLOT, r)
+    }
+  }
+
+   */
+
+
   /**
    * @dev Modifier to use in the initializer function of a contract.
    */
